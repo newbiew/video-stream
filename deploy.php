@@ -83,6 +83,7 @@ task('deploy', [
     // 'npm:install',
     // 'npm:build',
     // 'artisan:october',
+    'queue:table',
     'artisan:migrate',
     'reload:php-fpm',
     'cleanup'
@@ -108,6 +109,10 @@ task('artisan:october', function () {
 
 task('artisan:migrate', function () {
     run('{{bin/php}} {{release_path}}/artisan migrate');
+});
+
+task('queue:table', function () {
+    run('{{bin/php}} {{release_path}}/artisan queue:table');
 });
 
 
