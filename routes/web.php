@@ -2,23 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth']], function(){
 
-//     Route::get('/', [App\Http\Controllers\VideoController::class,'index']);
+    Route::get('/', [App\Http\Controllers\VideoController::class,'index']);
 
-//     Route::get('/uploader', [App\Http\Controllers\VideoController::class,'uploader'])->name('uploader');
+    Route::get('/uploader', [App\Http\Controllers\VideoController::class,'uploader'])->name('uploader');
 
-//     Route::post('/upload', [App\Http\Controllers\VideoController::class,'store'])->name('upload');
-// });
+    Route::post('/upload', [App\Http\Controllers\VideoController::class,'store'])->name('upload');
+});
 
-// Auth::routes();
-
-
+Auth::routes();
 
 
-Route::get('/',
-    function(){
-        return view('welcome');
-    }
-)->name('/');
+
+
+// Route::get('/',
+//     function(){
+//         return view('welcome');
+//     }
+// )->name('/');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
