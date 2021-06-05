@@ -83,6 +83,7 @@ task('deploy', [
     // 'npm:install',
     // 'npm:build',
     // 'artisan:october',
+    'artisan:migrate',
     'reload:php-fpm',
     'cleanup'
 ]);
@@ -103,6 +104,10 @@ after('deploy:failed', 'deploy:unlock');
 // before('deploy:symlink', 'artisan:migrate');
 task('artisan:october', function () {
     run('{{bin/php}} {{release_path}}/artisan october:up');
+});
+
+task('artisan:migrate', function () {
+    run('{{bin/php}} {{release_path}}/artisan migrate');
 });
 
 
