@@ -17,6 +17,7 @@ use Illuminate\Queue\SerializesModels;
 class ConvertVideoForStreaming implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    public $video;
 
     /**
      * Create a new job instance.
